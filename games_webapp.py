@@ -13,7 +13,7 @@ def show_form():
 @app.route("/contact")
 def show_contact():
     return render_template('contact.html')
-'''
+
 @app.route("/raw")
 def show_raw():
     fd = db.session.query(Surveydata).all()
@@ -182,7 +182,7 @@ def save():
     db.session.add(survey_dbRow)
     db.session.commit()
 
-    return redirect('/')
+    return redirect('/?done=true')
 
 
 if __name__ == "__main__":
