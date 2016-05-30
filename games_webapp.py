@@ -127,7 +127,7 @@ def show_result():
 
     Communication_list =[ShynessFactor, ReallifeContact, Bonding, Meeting]
 
-    return render_template('result.html', communication=Communication_list, salt=Salt_list, guildWhy=guildWhy_list, resignChoice=resignChoiceGroup_list, resign=resignGroup_list,  gt=gt_list, data=fd_list, gender=gender_list, ageGroup=ageGroup_list, educationGroup=educationGroup_list, smp=smp_list, gametimeGroup=gametimeGroup_list, percentage_female=percentage_female, percentage_multi=percentage_multi, percentage_single=percentage_single, percentage_singlemulti=percentage_singlemulti, percentage_young=percentage_young)
+    return render_template('result.html', communication=Communication_list, salt=Salt_list, guildWhy=guildWhy_list, resignChoice=resignChoiceGroup_list, resign=resignGroup_list, gt=gt_list, data=fd_list, gender=gender_list, ageGroup=ageGroup_list, educationGroup=educationGroup_list, smp=smp_list, gametimeGroup=gametimeGroup_list, percentage_female=percentage_female, percentage_multi=percentage_multi, percentage_single=percentage_single, percentage_singlemulti=percentage_singlemulti, percentage_young=percentage_young)
 
 
 def isFieldNA(fieldname, resultType = 'string'):
