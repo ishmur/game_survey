@@ -72,8 +72,8 @@
           ['nigdy mi sie to nie zdarzyło', {{resign[0]}}],
           ['rzadziej niż raz w roku', {{resign[1]}}],
           ['rzadko (kilka razy w roku)', {{resign[2]}}],
-          ['sporadycznie(raz w miesiącu)', {{resign[3]}}],
-          ['często(kilka razy w miesiącu)', {{resign[4]}}],
+          ['sporadycznie (raz w miesiącu)', {{resign[3]}}],
+          ['często (kilka razy w miesiącu)', {{resign[4]}}],
           ['częściej niż raz w tygodniu', {{resign[5]}}],
         ]);
 
@@ -128,7 +128,7 @@
         };
 
         var options_gametime = {
-          title: 'Czas spędzony na graniu',
+          title: 'Średni dzienny czas gry',
           colors: ['#552255', '#114411', '#9177AA', '#AA7791', '#77AAAA'],
           chartArea: {left: 30, top: 60, width: 'auto', height: 'auto'},
         };
@@ -204,7 +204,6 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <tbody>
                     <p>
                         W naszej ankiecie wzieło udział <b>{{ percentage_female }}%</b> kobiet!
                         {% if percentage_female > 30 %}
@@ -213,16 +212,15 @@
                             Chyba jednak prawdą jest, że gry to głównie męska zabawa...
                         {% endif %}
                     </p>
-                </tbody>
             </div>
             <div class="col-md-8">
-                    <div id="gender" style="width: 700px; height: 400px;"></div>
+                    <div id="gender" class="chart-size"></div>
             </div>
         </div>
 
         <div class="col-md-12 center">
         <p>Podejrzewamy, że gry najpopularniejsze są wśród młodych. Sprawdźmy czy to prawda.</p>
-        <div id="age" style="width: 900px; height: 500px;"></div>
+        <div id="age" class="chart-size"></div>
 
         <p>
              {% if percentage_young >= 50 %}
@@ -234,31 +232,26 @@
              {% endif %}
 
         </p>
-        <div id="education" style="width: 900px; height: 500px;"  ></div>
+        <div id="education" class="chart-size"  ></div>
             </div>
 
         <div class="col-md-12 center">
-        <tbody>
             <p>Rynek gier jest na tyle szeroki, że podzieliliśmy go na typy. Gry typu singleplayer preferuje <b>{{ percentage_single }}%</b> ankietowanych.
             Najbardziej interesujące ze względu na interakcje społeczne są gry przeznaczone dla wielu graczy. <b>{{ percentage_multi }}%</b> badanych wybrało je jako swoje ulubione.
-            Pozostałe <b>{{ percentage_singlemulti }}%</b> walczy zarówno w trybie single jak i multi.</p>
-        </tbody>
-
-        <p>Wśród entuzjastów gier multiplayer do najpopularniejszych (oczywiście poza graniem w Heroesy w pięć osób przed jednym komputerem) tytułów należą:</p>
+            Pozostałe <b>{{ percentage_singlemulti }}%</b> walczy zarówno w trybie single jak i multi.<br><br>Wśród entuzjastów gier multiplayer do najpopularniejszych (oczywiście poza graniem w Heroesy w pięć osób przed jednym komputerem) tytułów należą:</p>
         <div id="gametitles"></div>
         </div>
 
         <div class="col-md-12 center">
-            <br>
         <p>Czas jest ważny, szczególnie dla graczy - przecież zazwyczaj nie można zapauzować gry.
-        Zobaczmy jak zarządzają swoim czasem nasi ankietowani. Spytaliśmy ile godzin dziennie poświęcają oni na granie.</p>
-        <p>Czasem jednak zdarzy się zapomnieć o bożym świecie i zrezygnować z obowiązków na rzecz gry.</p>
+        Zobaczmy jak zarządzają swoim czasem nasi ankietowani. Spytaliśmy ile godzin dziennie poświęcają oni na granie.<br><br>
+        Czasem jednak zdarzy się zapomnieć o bożym świecie i zrezygnować z obowiązków na rzecz gry.</p>
         <div class="row">
             <div class="col-md-6">
-                <div id="gametime" style="width: 700px; height: 400px;"></div>
+                <div id="gametime" class="chart-size"></div>
             </div>
             <div class="col-md-6">
-                <div id="resign" style="width: 700px; height: 400px;"></div>
+                <div id="resign" class="chart-size"></div>
             </div>
         </div>
         </div>
@@ -269,112 +262,20 @@
         </div>
 
         <div class="col-md-12 center">
-            <br>
             <p>Rezygnaja z obowiązków powinna byc uzasadniona. Często jest to spowodowane przynależnością do gildii lub klanu. Można w nich spotkać
             despotycznego lidera-dyktatora, ekonomiczne profity lub też miłość życia. Zapytaliśmy graczy, czy należą do gildii i jaki jest ich
             stosunek do znajomych poznanych w świecie wirtualnym.</p>
                 <div id="guildWhy"></div>
                 <div id="communication"></div>
-                <br>
         </div>
 
         <div class="col-md-12 center">
             <p>Niestety czasem oprócz miłych graczy, z którymi chcemy utrzymać kontakt spotykamy się z osobami agresywnymi lub
-                celowo uprzykrzającymi rozgrywkę innym.</p>
-            <p><b>{{ salt[4] }}</b> - tyle osób przyznało się do bycia trollem w grze!</p>
+                celowo uprzykrzającymi rozgrywkę innym.<br><br>
+            <b>{{ salt[4] }}</b> - tyle osób przyznało się do bycia trollem w grze!</p>
                 <div id="combo"></div>
         </div>
     </div>
-
-
-
-
-    <!-- DOTA
-    <div class="div-multi">
-                        <div class="form-group" id="MultiTitlesCheckboxGrp">
-                            <label>
-                                Wybierz grę na temat, której interesuje Cię dalsza statystyka.
-                            </label><br>
-                            <div class="radio">
-                                <label>
-                                  <input type="radio" name="gtitle" value="dota" >DOTA 2
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                  <input type="radio" name="gtitle" value="lol" > League of Legends
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                  <input type="radio" name="gtitle" value="hots"> Heroes of the Storm
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                  <input type="radio" name="gtitle" value="cs" > gry z serii Counter Strike
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                  <input type="radio" name="gtitle" value="cod"> gry z serii Call of Duty
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                  <input type="radio" name="gtitle" value="bf"> gry z serii Battlefield
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                  <input type="radio" name="gtitle" value="gta"> Grand Theft Auto V
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                  <input type="radio" name="gtitle" value="fifa"> gry z serii FIFA
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                  <input type="radio" name="gtitle" value="minecraft"> Minecraft
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                  <input type="radio" name="gtitle" value="hs"> Hearthstone
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                  <input type="radio" name="gtitle" value="sc2"> Starcraft 2
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                  <input type="radio" name="gtitle" value="wow"> World of Warcraft
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                  <input type="radio" name="gtitle" value="other" checked="checked"> Pokaż stastystyke ze wszystkich powyższych gier.
-                                </label>
-                            </div>
-                        </div><br>
-                    </div>
-     -->
-    <!-- LOL -->
-    <!-- HOTS -->
-    <!-- CS -->
-    <!-- cod -->
-    <!-- bf -->
-    <!-- GTA -->
-    <!-- fifa -->
-    <!-- minecraft -->
-    <!-- hs -->
-    <!-- sc2 -->
-    <!-- wow -->
-    <!-- wszystkie -->
 
 </div>
 {% endblock %}
