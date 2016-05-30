@@ -10,6 +10,9 @@ def welcome():
 def show_form():
     return render_template('form.html')
 
+@app.route("/contact")
+def show_contact():
+    return render_template('contact.html')
 '''
 @app.route("/raw")
 def show_raw():
