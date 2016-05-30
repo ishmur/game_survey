@@ -14,7 +14,6 @@ def show_form():
 def show_contact():
     return render_template('contact.html')
 
-'''
 @app.route("/raw")
 def show_raw():
     fd = db.session.query(Surveydata).all()
